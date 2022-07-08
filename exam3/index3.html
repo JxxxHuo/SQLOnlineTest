@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/demo.css">
+        <script src="node_modules/jquery.min.js" type="text/javascript"></script>
+        <script src="node_modules/underscore-min.js" type="text/javascript"></script> 
+        <script src="node_modules/alasql.js" type="text/javascript"></script>    
+        <script src="js/sql-wasm.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/litedata.js"></script>
+        <script src="js/extension.js"></script>
+        <script src="js/script.js"></script>
+        <script async  src="node_modules/fp.min.js"  onload="initFingerprintJS()"></script>
+    
+    </head>
+    <body>
+        <h1> Database SQL Online Test 1 </h1>
+        <form>
+            student name :&nbsp;<input id="stuname" type='text' size='10'> <br>
+            student ID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="stuID" type='text' size='20'>
+
+        </form>
+        <br><br>
+        <h5> This is a company's database which have three tables: dept,emp and history, you must finish the following queries by SQL and observe the result after click 'Run' button</h5>
+
+        <div class="inputareadiv" style="padding-left:15px; ">
+
+            <form class="qform" >
+                <pre>Question 1. query all information of dept table. </pre>
+                <textarea id="textarea-online-run-code-1" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="2" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql('online-run-code-1', this)">Run</button>
+            </form>
+            <!----------------------------------------------------------------->
+
+            <form class="qform">            
+              <pre>Question 2. query all information of emp table.</pre>
+                <textarea id="textarea-online-run-code-2" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="2" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql('online-run-code-2', this)">Run</button> 
+            </form>
+            <!----------------------------------------------------------------->
+			   <form class="qform">            
+              <pre>Question 3. 查询每个部门的最高工资(列名hsa)、最低工资(列名lsa)</pre>
+			  <pre>和平均工资(列名asa)：</pre>
+			   <pre> </pre>
+                <textarea id="textarea-online-run-code-3" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="10" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql('online-run-code-3', this)">Run</button> 
+            </form>
+            <!----------------------------------------------------------------->
+			   <form class="qform">            
+              <pre>Question 4. 此查询基础上查询平均工资小于5000的部门并查询显示</pre>
+                <textarea id="textarea-online-run-code-4" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="10" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql('online-run-code-4', this)">Run</button> 
+            </form>
+            <!----------------------------------------------------------------->
+            <form class="qform">            
+              <pre>Question 5. 将工资少于6000的员工工资加500,重新查询emp表。</pre>
+                <textarea id="textarea-online-run-code-5" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="10" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql('online-run-code-5', this)">Run</button> 
+            </form>
+            <!----------------------------------------------------------------->
+	     <form class="qform">  
+	    <pre>Question 6. Create an index sa for table emp <br> in terms of the employee's salary and <br> show this index with clause "show index from"</pre>
+	
+                <textarea id="textarea-online-run-code-6" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="10" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql('online-run-code-6', this)">Run</button> 
+            </form>
+            <!----------------------------------------------------------------->
+            <hr>
+            <hr>
+	    <p>In the following sections we will do some exercises for transaction. The optional clauses are:</p><br>
+	    <ul>
+	    <li>begin transaction;</li>
+	    <li>rollback;</li>
+	    <li>commit;</li>
+	    </ul>
+	    <hr>
+	    <hr>
+	    <form class="qform">  
+	    <pre>Question 7. 开始一个事务，向dept表格中添加human resource部门，</pre>
+	    <pre>并且其did号是5，查询并显示新部门，不要结束事务。</pre>
+                <textarea id="textarea-online-run-code-7" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="10" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql2('online-run-code-7', this)">Run</button> 
+            </form>
+              <!-------------------------------------------------------------------->
+           <form class="qform">  
+	    <pre>Question 8.由于公司大会未通过，human resource部门被撤销，回滚刚才的事务，</pre>
+	    <pre>并重新查询显示现在的dept表。</pre>
+                <textarea id="textarea-online-run-code-8" onkeyup="_mdAdjustTextareaHeight(this)" class="text_area" rows="10" cols="50" style="overflow: scroll; border-top-left-radius: 20; border-top-right-radius: 20;"></textarea>
+                <br>
+                <button id='execute' type="button" onclick="execute_sql2('online-run-code-8', this)">Run</button> 
+            </form>
+            <!---------------------------------------------------------------------->
+             	
+    </div>
+        
+    <br>
+    <br>
+    <button class="button" id="submit" onclick='submitbutton()' >submit 提交 </button>
+
+    
+</body>
+</html>
