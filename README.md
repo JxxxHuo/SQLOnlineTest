@@ -19,5 +19,5 @@ node app.js
 Then you should configure your reverse proxy to get the post request.
 
 
-3. The reveived submission will be saved in web\data\ directory, which includes the client browser fingerprint in "finger" JSON key. If you want to process these client submissions, you can use [web\dataprocess.py]([https://github](https://github.com/JxxxHuo/SQLOnlineTest/web/dataprocess.py) to score and save to a database.
+3. The reveived submission will be saved in web\data\ directory, which includes the client browser fingerprint in "finger" JSON key. If you want to process these client submissions, you can use [web\dataprocess.py](https://github.com/JxxxHuo/SQLOnlineTest/web/dataprocess.py) to score and save to a database.
 The score of each question is defined in a python dict "sdict".
