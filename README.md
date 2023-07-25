@@ -25,11 +25,11 @@ The score of each question is defined in a python dict "sdict".
 --------------------------------------------------------------------------------------
 You can cite it as:
 
-@inproceedings{huo2022lightweight,
-  title={A Lightweight Online Interactive Assessment Platform for SQL Teaching},
-  author={Huo, Juan},
-  booktitle={2022 IEEE 13th International Conference on Software Engineering and Service Science (ICSESS)},
-  pages={186--189},
-  year={2022},
-  organization={IEEE}
-}
+@inproceedings{huo2022lightweight,     
+       title={A Lightweight Online Interactive Assessment Platform for SQL Teaching},  
+       author={Huo, Juan},  
+       booktitle={2022 IEEE 13th International Conference on Software Engineering and Service Science (ICSESS)},  
+       pages={186--189},  
+       year={2022},  
+       organization={IEEE}  
+}  
