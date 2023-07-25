@@ -21,3 +21,15 @@ Then you should configure your reverse proxy to get the post request.
 
 3. The reveived submission will be saved in web/data\ directory, which includes the client browser fingerprint in "finger" JSON key. If you want to process these client submissions, you can use web/dataprocess.py to score and save to a database.
 The score of each question is defined in a python dict "sdict".
+
+--------------------------------------------------------------------------------------
+You can cite it as:
+
+@inproceedings{huo2022lightweight,
+  title={A Lightweight Online Interactive Assessment Platform for SQL Teaching},
+  author={Huo, Juan},
+  booktitle={2022 IEEE 13th International Conference on Software Engineering and Service Science (ICSESS)},
+  pages={186--189},
+  year={2022},
+  organization={IEEE}
+}
